@@ -29,6 +29,7 @@ ADMIN_USERNAME="esli"
 SSH_KEY="$HOME/.ssh/id_rsa.pub"
 NETWORK_SECURITY_GROUP="UbuntuSecurityGroup"
 NETWORK_SECURITY_RULE="AllowSSHHowest"
+TAG="student=EsliHeyvaert"
 
 # Subscriptie instellen, alle resources zullen dan sowieso onder deze subscription worden aangemaakt
 #az account set --subscription $RESOURCE_GROUP
@@ -40,10 +41,12 @@ echo "Creating security group (if not already exists)"
 az network nsg create \
   --resource-group "$RESOURCE_GROUP" \
   --name "$NETWORK_SECURITY_GROUP" \
+  --tags "$TAG" \
   --output table
 
 # Create security rule
 # Allow SSH from Howest (public) network
+echo "Creating security group rule (if not already exists)"
 az network nsg rule create \
   --resource-group "$RESOURCE_GROUP" \
   --nsg-name "$NETWORK_SECURITY_GROUP" \
@@ -68,6 +71,7 @@ for ((i = 1; i <= "$1"; i++)); do
     --ssh-key-value "$SSH_KEY" \
     --nsg "$NETWORK_SECURITY_GROUP" \
     --admin-user "$ADMIN_USERNAME" \
+    --tags "$TAG" \
     --no-wait \
     --output table
 done
