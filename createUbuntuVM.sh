@@ -27,7 +27,7 @@ IMAGE_URN="Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest"
 VM_SIZE="Standard_B1s"
 ADMIN_USERNAME="esli"
 SSH_KEY="$HOME/.ssh/id_rsa.pub"
-NETWORK_SECURITY_GROUP="UbuntuSecurityGroup"
+NETWORK_SECURITY_GROUP="UbuntuSecurityGroupEsliHeyvaert"
 NETWORK_SECURITY_RULE="AllowSSHHowest"
 TAG="student=EsliHeyvaert"
 
