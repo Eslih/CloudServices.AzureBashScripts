@@ -8,7 +8,10 @@ RESOURCE_GROUP="CloudServices"
 
 az account set --subscription "$SUBSCRIPTION"
 
+# Space delimited array
+# Export from Leho "Cijferboek" 
 USERS=""
+
 # Create users
 for USER in $USERS; do
     echo "Creating account for ${USER}"
