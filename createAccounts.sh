@@ -9,7 +9,7 @@ RESOURCE_GROUP="CloudServices"
 az account set --subscription "$SUBSCRIPTION"
 
 # Space delimited array
-# Export from Leho "Cijferboek" 
+# Export from Leho "Cijferboek"
 USERS=""
 
 # Create users
